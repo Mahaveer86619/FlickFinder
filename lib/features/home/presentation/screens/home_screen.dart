@@ -164,7 +164,16 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Row(
               children: sectionItems
                   .map(
-                    (item) => SeriesVerticalTile(series: item),
+                    (item) => SeriesVerticalTile(
+                      series: item,
+                      onTap: () {
+                        _changeScreen(
+                          '/details',
+                          isReplacement: false,
+                          arguments: {'series': item},
+                        );
+                      },
+                    ),
                   )
                   .toList(),
             ),

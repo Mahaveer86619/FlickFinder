@@ -52,6 +52,8 @@ dependencies:
 
   just_audio: ^0.9.42
 
+  html: ^0.15.5
+
   flutter_launcher_icons: ^0.14.2
 
 dev_dependencies:
