@@ -1,6 +1,6 @@
 name: flick_finder
 description: "FlickFinder is a movie search application designed to provide users with a seamless experience to explore, search, and view detailed information about movies. The app integrates online API data and offline storage for enhanced usability. It is styled with a Netflix-like dark theme for a modern, sleek look."
-publish_to: 'none'
+publish_to: "none"
 
 version: 1.0.0+1
 
@@ -40,7 +40,6 @@ dependencies:
   intl: ^0.19.0
   json_annotation: ^4.9.0
   cached_network_image: ^3.3.1
-
   awesome_notifications: ^0.10.0
   smooth_page_indicator: ^1.1.0
   flutter_animate: ^4.5.0
@@ -49,6 +48,7 @@ dependencies:
   country_picker: ^2.0.26
   dotted_border: ^2.1.0
   file_picker: ^8.1.7
+  google_nav_bar: ^5.0.7
 
   just_audio: ^0.9.42
 
@@ -59,7 +59,6 @@ dev_dependencies:
     sdk: flutter
 
   flutter_lints: ^5.0.0
-
 
 flutter:
   uses-material-design: true

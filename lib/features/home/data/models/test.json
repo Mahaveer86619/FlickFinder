@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1197,
+    "url": "https://www.tvmaze.com/shows/1197/a-haunting",
+    "name": "A Haunting",
+    "type": "Documentary",
+    "language": "English",
+    "genres": ["Drama", "Horror", "Mystery"],
+    "status": "Ended",
+    "runtime": 60,
+    "averageRuntime": 60,
+    "premiered": "2005-10-28",
+    "ended": "2022-05-27",
+    "officialSite": "https://www.travelchannel.com/shows/a-haunting",
+    "schedule": {
+      "time": "22:00",
+      "days": ["Friday"]
+    },
+    "rating": {
+      "average": 7.9
+    },
+    "weight": 95,
+    "network": {
+      "id": 82,
+      "name": "Travel Channel",
+      "country": {
+        "name": "United States",
+        "code": "US",
+        "timezone": "America/New_York"
+      },
+      "officialSite": null
+    },
+    "webChannel": null,
+    "dvdCountry": null,
+    "externals": {
+      "tvrage": 13319,
+      "thetvdb": 79535,
+      "imdb": "tt0484243"
+    },
+    "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/389/973876.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/389/973876.jpg"
+    },
+    "summary": "<p>\"When the door between the spirit world and ours is opened, the stuff of nightmares becomes reality\". That's according to the introduction of this series, <b>A Haunting</b>, which dramatizes the \"true\" stories of people who have been haunted or experienced a haunting. In this docu-drama, the actual people involved recount their stories on-camera, as the frightening events of their stories are re-enacted....</p>",
+    "updated": 1736472928,
+    "_links": {
+      "self": {
+        "href": "https://api.tvmaze.com/shows/1197"
+      },
+      "previousepisode": {
+        "href": "https://api.tvmaze.com/episodes/2313611",
+        "name": "Haunted Homecoming"
+      }
+    }
+  }
+]

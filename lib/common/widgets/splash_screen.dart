@@ -28,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen>
 
   void _startTimer() {
     _timer = Timer(const Duration(seconds: 3, microseconds: 750), () {
-      Navigator.pushReplacementNamed(context, '/home');
+      Navigator.pushReplacementNamed(context, '/dashboard');
     });
   }
 
@@ -43,7 +43,7 @@ class _SplashScreenState extends State<SplashScreen>
   }
 
   _buildLoading(double textSize) {
-    return Text('AI Podcast',
+    return Text('FlickFinder',
             style: TextStyle(
               fontSize: textSize,
               fontWeight: FontWeight.bold,

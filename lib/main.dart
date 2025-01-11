@@ -1,8 +1,11 @@
 import 'package:flick_finder/common/app_routes/app_routes.dart';
+import 'package:flick_finder/common/widgets/bottom_app_bar/bloc/navigation_bloc.dart';
 import 'package:flick_finder/core/services/notifications.dart';
 import 'package:flick_finder/core/theme/app_theme.dart';
+import 'package:flick_finder/features/home/presentation/bloc/home_bloc.dart';
 import 'package:flick_finder/injection_container.dart' as di;
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 void main() {
@@ -23,31 +26,23 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'AI Podcast',
-      theme: lightMode,
-      darkTheme: darkMode,
-      debugShowCheckedModeBanner: false,
-      initialRoute: '/',
-      routes: routes,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<NavigationBloc>(
+          create: (context) => di.sl<NavigationBloc>(),
+        ),
+        BlocProvider<HomeBloc>(
+          create: (context) => di.sl<HomeBloc>(),
+        ),
+      ],
+      child: MaterialApp(
+        title: 'FlickFinder',
+        theme: lightMode,
+        darkTheme: darkMode,
+        debugShowCheckedModeBanner: false,
+        initialRoute: '/',
+        routes: routes,
+      ),
     );
-    // return MultiBlocProvider(
-    //   providers: [
-    //     BlocProvider<UploadContentBloc>(
-    //       create: (context) => di.sl<UploadContentBloc>(),
-    //     ),
-    //     BlocProvider<PodcastBloc>(
-    //       create: (context) => di.sl<PodcastBloc>(),
-    //     ),
-    //   ],
-    //   child: MaterialApp(
-    //     title: 'AI Podcast',
-    //     theme: lightMode,
-    //     darkTheme: darkMode,
-    //     debugShowCheckedModeBanner: false,
-    //     initialRoute: '/',
-    //     routes: routes,
-    //   ),
-    // );
   }
 }
