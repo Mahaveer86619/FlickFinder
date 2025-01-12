@@ -37,10 +37,12 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
       if (scienceFictionListResp is DataFailure) {
         emit(HomeError(message: scienceFictionListResp.message!));
+        return;
       }
 
       if (scienceFictionListResp.data == null) {
         emit(HomeError(message: "No data found"));
+        return;
       }
 
       final scienceFictionList = scienceFictionListResp.data!;
@@ -54,10 +56,12 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
       if (fantasyListResp is DataFailure) {
         emit(HomeError(message: fantasyListResp.message!));
+        return;
       }
 
       if (fantasyListResp.data == null) {
         emit(HomeError(message: "No data found"));
+        return;
       }
 
       final fantasyList = fantasyListResp.data!;
@@ -71,10 +75,12 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
       if (mysteryListResp is DataFailure) {
         emit(HomeError(message: mysteryListResp.message!));
+        return;
       }
 
       if (mysteryListResp.data == null) {
         emit(HomeError(message: "No data found"));
+        return;
       }
 
       final mysteryList = mysteryListResp.data!;
@@ -88,10 +94,12 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
       if (romanceListResp is DataFailure) {
         emit(HomeError(message: romanceListResp.message!));
+        return;
       }
 
       if (romanceListResp.data == null) {
         emit(HomeError(message: "No data found"));
+        return;
       }
 
       final romanceList = romanceListResp.data!;
@@ -105,10 +113,12 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
       if (horrorListResp is DataFailure) {
         emit(HomeError(message: horrorListResp.message!));
+        return;
       }
 
       if (horrorListResp.data == null) {
         emit(HomeError(message: "No data found"));
+        return;
       }
 
       final horrorList = horrorListResp.data!;
@@ -122,10 +132,12 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
       if (thrillerListResp is DataFailure) {
         emit(HomeError(message: thrillerListResp.message!));
+        return;
       }
 
       if (thrillerListResp.data == null) {
         emit(HomeError(message: "No data found"));
+        return;
       }
 
       final thrillerList = thrillerListResp.data!;
@@ -139,10 +151,12 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
       if (historicalListResp is DataFailure) {
         emit(HomeError(message: historicalListResp.message!));
+        return;
       }
 
       if (historicalListResp.data == null) {
         emit(HomeError(message: "No data found"));
+        return;
       }
 
       final historicalList = historicalListResp.data!;
@@ -156,10 +170,12 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
       if (westernListResp is DataFailure) {
         emit(HomeError(message: westernListResp.message!));
+        return;
       }
 
       if (westernListResp.data == null) {
         emit(HomeError(message: "No data found"));
+        return;
       }
 
       final westernList = westernListResp.data!;
@@ -173,10 +189,12 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
       if (comedyListResp is DataFailure) {
         emit(HomeError(message: comedyListResp.message!));
+        return;
       }
 
       if (comedyListResp.data == null) {
         emit(HomeError(message: "No data found"));
+        return;
       }
 
       final comedyList = comedyListResp.data!;
@@ -190,10 +208,12 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
       if (dramaListResp is DataFailure) {
         emit(HomeError(message: dramaListResp.message!));
+        return;
       }
 
       if (dramaListResp.data == null) {
         emit(HomeError(message: "No data found"));
+        return;
       }
 
       final dramaList = dramaListResp.data!;

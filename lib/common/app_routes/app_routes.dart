@@ -1,6 +1,6 @@
 import 'package:flick_finder/common/widgets/dashboard.dart';
 import 'package:flick_finder/common/widgets/splash_screen.dart';
-import 'package:flick_finder/features/details/presentation/screens/details_screen.dart';
+import 'package:flick_finder/features/details/details_screen.dart';
 import 'package:flutter/material.dart';
 
 final routes = <String, WidgetBuilder>{

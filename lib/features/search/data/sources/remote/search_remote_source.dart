@@ -2,25 +2,25 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:flick_finder/common/app_constants/app_constants.dart';
+import 'package:flick_finder/common/helpers/data_state.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-import 'package:flick_finder/common/helpers/data_state.dart';
 import 'package:logger/logger.dart';
 
-class HomeRemoteSource {
+class SearchRemoteSource {
   final Logger logger;
 
-  HomeRemoteSource({required this.logger});
+  SearchRemoteSource({required this.logger});
 
-  Future<DataState<List<Map<String, dynamic>>>> getSeries({
-    required String category,
+  Future<DataState<List<Map<String, dynamic>>>> getSearchedSeries({
+    required String query,
   }) async {
     try {
-      logger.i('Fetching series from remote source ($category)...');
+      logger.i('Fetching series from remote source ($query)...');
 
       final response = await http.get(
-        Uri.parse('$baseUrl/search/shows?q=$category'),
+        Uri.parse('$baseUrl/search/shows?q=$query'),
       );
 
       if (response.statusCode != 200) {
@@ -38,7 +38,7 @@ class HomeRemoteSource {
       final dataItems =
           data.map((e) => e['show'] as Map<String, dynamic>).toList();
 
-      logger.i('Home Data items ($category): ${dataItems.length}');
+      logger.i('Searched data items ($query): ${dataItems.length}');
 
       return DataSuccess(dataItems, "Success");
     } catch (error) {

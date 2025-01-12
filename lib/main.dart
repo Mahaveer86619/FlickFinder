@@ -3,6 +3,7 @@ import 'package:flick_finder/common/widgets/bottom_app_bar/bloc/navigation_bloc.
 import 'package:flick_finder/core/services/notifications.dart';
 import 'package:flick_finder/core/theme/app_theme.dart';
 import 'package:flick_finder/features/home/presentation/bloc/home_bloc.dart';
+import 'package:flick_finder/features/search/presentation/bloc/search_bloc.dart';
 import 'package:flick_finder/injection_container.dart' as di;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -33,6 +34,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider<HomeBloc>(
           create: (context) => di.sl<HomeBloc>(),
+        ),
+        BlocProvider<SearchBloc>(
+          create: (context) => di.sl<SearchBloc>(),
         ),
       ],
       child: MaterialApp(

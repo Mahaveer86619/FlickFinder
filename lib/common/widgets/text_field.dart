@@ -144,6 +144,7 @@ class MySearchBar extends StatelessWidget {
   final TextEditingController controller;
   final String? Function(String?) validator;
   final String? initialValue;
+  final Function(String) onSubmitted;
 
   const MySearchBar({
     super.key,
@@ -151,6 +152,7 @@ class MySearchBar extends StatelessWidget {
     required this.controller,
     required this.validator,
     this.initialValue,
+    required this.onSubmitted,
   });
 
   @override
@@ -159,7 +161,8 @@ class MySearchBar extends StatelessWidget {
       initialValue: initialValue,
       validator: validator,
       keyboardType: TextInputType.name,
-      textInputAction: TextInputAction.done,
+      textInputAction: TextInputAction.search,
+      onFieldSubmitted: onSubmitted,
       autocorrect: true,
       onChanged: (value) {
         controller.text = value;

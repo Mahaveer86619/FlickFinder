@@ -12,31 +12,6 @@ class DetailsScreen extends StatefulWidget {
 }
 
 class _DetailsScreenState extends State<DetailsScreen> {
-  void _changeScreen(
-    String routeName, {
-    Map<String, dynamic>? arguments,
-    bool isReplacement = false,
-  }) {
-    if (isReplacement) {
-      Navigator.pushReplacementNamed(
-        context,
-        routeName,
-        arguments: arguments,
-      );
-    } else {
-      Navigator.pushNamed(
-        context,
-        routeName,
-        arguments: arguments,
-      );
-    }
-  }
-
-  void _showMessage(String message) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(message)),
-    );
-  }
 
   @override
   void initState() {

@@ -4,6 +4,11 @@ import 'package:flick_finder/features/home/data/sources/remote/home_remote_sourc
 import 'package:flick_finder/features/home/domain/repository/home_repository.dart';
 import 'package:flick_finder/features/home/domain/usecases/get_series_usecase.dart';
 import 'package:flick_finder/features/home/presentation/bloc/home_bloc.dart';
+import 'package:flick_finder/features/search/data/repository/search_repository_impl.dart';
+import 'package:flick_finder/features/search/data/sources/remote/search_remote_source.dart';
+import 'package:flick_finder/features/search/domain/repository/search_repository.dart';
+import 'package:flick_finder/features/search/domain/usecases/search_series_usecase.dart';
+import 'package:flick_finder/features/search/presentation/bloc/search_bloc.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
 import 'package:logger/logger.dart';
@@ -49,6 +54,12 @@ Future<void> dataSources() async {
       logger: sl<Logger>(),
     ),
   );
+  //* Register Search DataSource
+  sl.registerLazySingleton<SearchRemoteSource>(
+    () => SearchRemoteSource(
+      logger: sl<Logger>(),
+    ),
+  );
 }
 
 Future<void> repositories() async {
@@ -57,6 +68,13 @@ Future<void> repositories() async {
     () => HomeRepositoryImpl(
       logger: sl<Logger>(),
       remoteSource: sl<HomeRemoteSource>(),
+    ),
+  );
+  //* Register Search Repository
+  sl.registerLazySingleton<SearchRepository>(
+    () => SearchRepositoryImpl(
+      logger: sl<Logger>(),
+      searchRemoteSource: sl<SearchRemoteSource>(),
     ),
   );
 }
@@ -68,6 +86,12 @@ Future<void> useCases() async {
       repository: sl<HomeRepository>(),
     ),
   );
+  //* Register SearchSeriesUsecase
+  sl.registerLazySingleton<SearchSeriesUsecase>(
+    () => SearchSeriesUsecase(
+      repository: sl<SearchRepository>(),
+    ),
+  );
 }
 
 Future<void> blocs() async {
@@ -76,6 +100,13 @@ Future<void> blocs() async {
     () => HomeBloc(
       logger: sl<Logger>(),
       getSeriesUsecase: sl<GetSeriesUsecase>(),
+    ),
+  );
+  //* Register Search Bloc
+  sl.registerLazySingleton<SearchBloc>(
+    () => SearchBloc(
+      logger: sl<Logger>(),
+      searchSeriesUsecase: sl<SearchSeriesUsecase>(),
     ),
   );
 }
